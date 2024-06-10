@@ -1,0 +1,9 @@
+apiVersion: gameserver.steamkube.io/v1alpha1
+kind: RustServer
+metadata:
+  labels:
+    app.kubernetes.io/name: steamkube
+    app.kubernetes.io/managed-by: kustomize
+  name: rustserver-sample
+spec:
+  # TODO(user): Add fields here

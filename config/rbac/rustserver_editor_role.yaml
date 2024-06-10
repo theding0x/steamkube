@@ -1,0 +1,27 @@
+# permissions for end users to edit rustservers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: steamkube
+    app.kubernetes.io/managed-by: kustomize
+  name: rustserver-editor-role
+rules:
+- apiGroups:
+  - gameserver.steamkube.io
+  resources:
+  - rustservers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - gameserver.steamkube.io
+  resources:
+  - rustservers/status
+  verbs:
+  - get

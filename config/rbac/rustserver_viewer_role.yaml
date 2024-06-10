@@ -1,0 +1,23 @@
+# permissions for end users to view rustservers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: steamkube
+    app.kubernetes.io/managed-by: kustomize
+  name: rustserver-viewer-role
+rules:
+- apiGroups:
+  - gameserver.steamkube.io
+  resources:
+  - rustservers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - gameserver.steamkube.io
+  resources:
+  - rustservers/status
+  verbs:
+  - get
